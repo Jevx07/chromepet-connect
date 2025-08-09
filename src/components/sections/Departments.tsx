@@ -6,43 +6,43 @@ import { ArrowRight, Cpu, Zap, Cog, Radio, Wrench } from "lucide-react";
 const departments = [
   {
     icon: Cpu,
-    name: "Computer Engineering",
-    description: "Advanced computing, software development, AI, and data science programs preparing students for the digital future.",
-    highlights: ["Software Development", "AI & Machine Learning", "Web Technologies", "Database Systems"],
+    name: "Computer Science Engineering",
+    description: "Computer Engineering Course was started in the year 1995-1996, with an intake of 60 students. Focus on software development, programming, and computer systems.",
+    highlights: ["Software Development", "Programming", "Computer Systems", "Web Technologies"],
     color: "primary",
-    students: "450+"
-  },
-  {
-    icon: Zap,
-    name: "Electrical & Electronics",
-    description: "Power systems, control engineering, and electronics with hands-on experience in modern laboratories.",
-    highlights: ["Power Systems", "Control Engineering", "Renewable Energy", "Industrial Automation"],
-    color: "accent",
-    students: "380+"
+    students: "60",
+    established: "1995-96",
+    duration: "3 Years / 2 Years (Lateral)"
   },
   {
     icon: Radio,
-    name: "Electronics & Communication",
-    description: "Communication systems, signal processing, and embedded systems for the telecommunications industry.",
-    highlights: ["Communication Systems", "VLSI Design", "Embedded Systems", "Signal Processing"],
+    name: "Electronics & Communication Engineering",
+    description: "Electronics and Communication Engineering Course was started in the year 1992-93, with an intake of 60 students. Specializing in digital electronics and communication systems.",
+    highlights: ["Communication Systems", "Digital Electronics", "Signal Processing", "VLSI Design"],
     color: "secondary",
-    students: "420+"
+    students: "60",
+    established: "1992-93",
+    duration: "3 Years / 2 Years (Lateral)"
   },
   {
     icon: Cog,
     name: "Mechanical Engineering",
-    description: "Design, manufacturing, and automation technologies with state-of-the-art workshop facilities.",
-    highlights: ["CAD/CAM", "Manufacturing", "Automation", "Thermal Engineering"],
+    description: "Mechanical Engineering Course was started in the year 2014, with an intake of 60 students. Focus on manufacturing, automation, and mechanical systems.",
+    highlights: ["Manufacturing", "CAD/CAM", "Automation", "Thermal Engineering"],
     color: "primary",
-    students: "500+"
+    students: "60",
+    established: "2014",
+    duration: "3 Years / 2 Years (Lateral)"
   },
   {
-    icon: Wrench,
-    name: "Basic Engineering",
-    description: "Foundation courses in mathematics, physics, chemistry, and engineering drawing for all disciplines.",
-    highlights: ["Engineering Mathematics", "Physics Lab", "Chemistry Lab", "Engineering Drawing"],
+    icon: Zap,
+    name: "Electrical & Electronics Engineering",
+    description: "Electrical and Electronics Engineering Course was started in the year 1992, with an intake of 60 students. Specializing in power systems and electronics.",
+    highlights: ["Power Systems", "Control Engineering", "Electronics", "Industrial Automation"],
     color: "accent",
-    students: "All Students"
+    students: "60",
+    established: "1992",
+    duration: "3 Years / 2 Years (Lateral)"
   }
 ];
 
@@ -71,7 +71,7 @@ export function Departments() {
               key={index} 
               className="group hover:shadow-strong transition-all duration-300 border-0 bg-gradient-card overflow-hidden"
             >
-              <CardHeader className="pb-4">
+               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div 
                     className={`w-12 h-12 rounded-xl flex items-center justify-center ${
@@ -89,12 +89,17 @@ export function Departments() {
                     />
                   </div>
                   <Badge variant="secondary" className="text-xs">
-                    {dept.students}
+                    Intake: {dept.students}
                   </Badge>
                 </div>
                 <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {dept.name}
                 </CardTitle>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <span>Est. {dept.established}</span>
+                  <span>•</span>
+                  <span>{dept.duration}</span>
+                </div>
               </CardHeader>
               
               <CardContent className="space-y-4">

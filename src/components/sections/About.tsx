@@ -34,8 +34,10 @@ export function About() {
             <span className="text-primary block">Engineers</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Government Polytechnic College Chromepet has been a beacon of technical education, 
-            nurturing skilled professionals who contribute to India's technological advancement.
+            Government Polytechnic College, Chromepet-Chennai (Formerly Institute of Road Transport Polytechnic College, Chennai) 
+            was started by the Institute of Road Transport, Taramani in the year 1992-93. Three Polytechnics in Chennai, Bargur, 
+            and Tirunelveli were started with the idea of imparting Technical Education to the wards of the Transport Corporation employees. 
+            The Polytechnic functions in the campus with an area of 17.35 acres.
           </p>
         </div>
 
@@ -103,20 +105,20 @@ export function About() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">25+</div>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">32+</div>
               <div className="text-primary-foreground/80">Years of Excellence</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">5000+</div>
-              <div className="text-primary-foreground/80">Alumni Network</div>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">6</div>
+              <div className="text-primary-foreground/80">Registered Students (in thousands)</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">85%</div>
-              <div className="text-primary-foreground/80">Placement Rate</div>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">4</div>
+              <div className="text-primary-foreground/80">Engineering Departments</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">50+</div>
-              <div className="text-primary-foreground/80">Industry Partners</div>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">17.35</div>
+              <div className="text-primary-foreground/80">Acres Campus</div>
             </div>
           </div>
         </div>
