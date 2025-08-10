@@ -3,45 +3,46 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown, GraduationCap, BookOpen, Users, Phone, Download, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const navigationItems = [
   {
     title: "About",
-    href: "#about",
+    href: "/about",
     icon: GraduationCap,
     submenu: [
-      { title: "College History", href: "#history" },
-      { title: "Vision & Mission", href: "#vision" },
-      { title: "Administration", href: "#administration" },
-      { title: "Infrastructure", href: "#infrastructure" }
+      { title: "College History", href: "/about#history" },
+      { title: "Vision & Mission", href: "/about#vision" },
+      { title: "Administration", href: "/about#administration" },
+      { title: "Infrastructure", href: "/about#infrastructure" }
     ]
   },
   {
     title: "Departments",
-    href: "#departments",
+    href: "/departments",
     icon: BookOpen,
     submenu: [
-      { title: "Basic Engineering", href: "#basic-engineering" },
-      { title: "Computer Engineering", href: "#computer-engineering" },
-      { title: "Electrical & Electronics", href: "#electrical" },
-      { title: "Electronics & Communication", href: "#ece" },
-      { title: "Mechanical Engineering", href: "#mechanical" }
+      { title: "Basic Engineering", href: "/departments#basic-engineering" },
+      { title: "Computer Engineering", href: "/departments#computer-engineering" },
+      { title: "Electrical & Electronics", href: "/departments#electrical" },
+      { title: "Electronics & Communication", href: "/departments#ece" },
+      { title: "Mechanical Engineering", href: "/departments#mechanical" }
     ]
   },
   {
+    title: "Staff",
+    href: "/staff",
+    icon: Users
+  },
+  {
     title: "Admissions",
-    href: "#admissions",
+    href: "/admissions",
     icon: Users
   },
   {
     title: "Academics",
-    href: "#academics",
+    href: "/academics",
     icon: Calendar
-  },
-  {
-    title: "Downloads",
-    href: "#downloads",
-    icon: Download
   },
   {
     title: "Contact",
@@ -58,7 +59,7 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-primary-foreground" />
             </div>
@@ -66,7 +67,7 @@ export function Navigation() {
               <h1 className="text-lg font-bold text-foreground">GPTC Chromepet</h1>
               <p className="text-sm text-muted-foreground -mt-1">Government Polytechnic</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -83,10 +84,20 @@ export function Navigation() {
                     "text-foreground hover:text-primary hover:bg-primary/5 transition-colors",
                     activeDropdown === item.title && "bg-primary/5 text-primary"
                   )}
+                  asChild={!item.submenu}
                 >
-                  <item.icon className="w-4 h-4 mr-2" />
-                  {item.title}
-                  {item.submenu && <ChevronDown className="w-3 h-3 ml-1" />}
+                  {item.submenu ? (
+                    <>
+                      <item.icon className="w-4 h-4 mr-2" />
+                      {item.title}
+                      <ChevronDown className="w-3 h-3 ml-1" />
+                    </>
+                  ) : (
+                    <Link to={item.href}>
+                      <item.icon className="w-4 h-4 mr-2" />
+                      {item.title}
+                    </Link>
+                  )}
                 </Button>
 
                 {/* Dropdown Menu */}
@@ -94,13 +105,13 @@ export function Navigation() {
                   <div className="absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-medium z-50">
                     <div className="py-2">
                       {item.submenu.map((subItem) => (
-                        <a
+                        <Link
                           key={subItem.title}
-                          href={subItem.href}
+                          to={subItem.href}
                           className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
                         >
                           {subItem.title}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -130,20 +141,30 @@ export function Navigation() {
                     <Button
                       variant="ghost"
                       className="w-full justify-start text-left"
+                      asChild={!item.submenu}
                     >
-                      <item.icon className="w-4 h-4 mr-3" />
-                      {item.title}
+                      {item.submenu ? (
+                        <>
+                          <item.icon className="w-4 h-4 mr-3" />
+                          {item.title}
+                        </>
+                      ) : (
+                        <Link to={item.href}>
+                          <item.icon className="w-4 h-4 mr-3" />
+                          {item.title}
+                        </Link>
+                      )}
                     </Button>
                     {item.submenu && (
                       <div className="ml-7 space-y-1">
                         {item.submenu.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.title}
-                            href={subItem.href}
+                            to={subItem.href}
                             className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                           >
                             {subItem.title}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
