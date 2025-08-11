@@ -10,6 +10,11 @@ import Departments from "./pages/Departments";
 import Admissions from "./pages/Admissions";
 import Academics from "./pages/Academics";
 import NotFound from "./pages/NotFound";
+import BasicEngineering from "./pages/department-details/BasicEngineering";
+import ComputerScience from "./pages/department-details/ComputerScience";
+import ElectricalAndElectronics from "./pages/department-details/ElectricalAndElectronics";
+import ElectronicsAndCommunication from "./pages/department-details/ElectronicsAndCommunication";
+import MechanicalEngineering from "./pages/department-details/MechanicalEngineering";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +31,11 @@ const App = () => (
           <Route path="/departments" element={<Departments />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/academics" element={<Academics />} />
+          <Route path="/departments/basic-engineering" element={<BasicEngineering />} />
+          <Route path="/departments/computer-science" element={<ComputerScience />} />
+          <Route path="/departments/electrical-electronics" element={<ElectricalAndElectronics />} />
+          <Route path="/departments/electronics-communication" element={<ElectronicsAndCommunication />} />
+          <Route path="/departments/mechanical-engineering" element={<MechanicalEngineering />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
