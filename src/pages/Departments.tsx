@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Cpu, Zap, Cog, Radio, Wrench, Calendar, Users, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const departments = [
   {
@@ -163,9 +164,12 @@ const Departments = () => {
                   <Button 
                     variant="ghost" 
                     className="w-full justify-between text-primary hover:text-primary hover:bg-primary/5 mt-4"
+                    asChild
                   >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
+                    <Link to={`/departments/${dept.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}>
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
