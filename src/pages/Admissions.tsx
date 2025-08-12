@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/ui/navigation";
 import { 
   FileText, 
   Calendar, 
@@ -12,8 +13,10 @@ import {
   Clock,
   MapPin,
   Phone,
-  Mail
+  Mail,
+  ArrowLeft
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const admissionSteps = [
   {
@@ -97,10 +100,20 @@ const requiredDocuments = [
 const Admissions = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
+          <div className="flex items-center mb-4">
+            <Button variant="ghost" asChild className="text-primary-foreground/80 hover:text-primary-foreground">
+              <Link to="/">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </Link>
+            </Button>
+          </div>
           <div className="text-center">
             <Badge variant="secondary" className="mb-4 text-sm font-medium px-4 py-2">
               Join Our Institution

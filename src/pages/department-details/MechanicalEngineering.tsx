@@ -4,9 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Navigation } from "@/components/ui/navigation";
-import { Star, Cog, ArrowLeft } from "lucide-react";
+import { Star, Cog, ArrowLeft, Mail, Phone, Award, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { staffData } from "@/data/staffData";
 
 const MechanicalEngineering = () => {
   return (
@@ -50,10 +52,11 @@ const MechanicalEngineering = () => {
               
               <div className="relative mb-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=400" 
-                  alt="Mechanical Engineering Workshop" 
-                  className="w-full h-96 object-cover rounded-lg"
+                  src="/images/departments/Mechanical Engineering.png" 
+                  alt="Mechanical Engineering Department" 
+                  className="w-full h-96 object-cover rounded-lg shadow-lg border"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
               </div>
 
               <Tabs defaultValue="description" className="w-full">
@@ -103,11 +106,55 @@ const MechanicalEngineering = () => {
                 </TabsContent>
                 
                 <TabsContent value="staff" className="mt-6">
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-foreground">Department Faculty</h3>
-                    <p className="text-muted-foreground">
-                      Our experienced faculty members provide comprehensive training in mechanical engineering.
-                    </p>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground mb-3">Department Faculty</h3>
+                      <p className="text-muted-foreground mb-6">
+                        Our experienced faculty members provide comprehensive training in mechanical engineering.
+                      </p>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {staffData["mechanical-engineering"].map((staff, index) => (
+                        <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 bg-gradient-card overflow-hidden">
+                          <CardHeader className="pb-4">
+                            <div className="flex items-start gap-4">
+                              <Avatar className="w-16 h-16 border-2 border-primary/20">
+                                <AvatarImage src={staff.image} alt={staff.name} />
+                                <AvatarFallback className="bg-gradient-hero text-primary-foreground text-sm font-semibold">
+                                  {staff.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                                </AvatarFallback>
+                              </Avatar>
+                              <div className="flex-1">
+                                <CardTitle className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                                  {staff.name}
+                                </CardTitle>
+                                <p className="text-primary font-medium text-sm">{staff.designation}</p>
+                                <p className="text-xs text-muted-foreground">{staff.department}</p>
+                              </div>
+                            </div>
+                          </CardHeader>
+                          
+                          <CardContent className="space-y-3">
+                            <div className="flex items-center gap-2">
+                              <Award className="w-4 h-4 text-accent" />
+                              <span className="text-xs text-foreground font-medium">{staff.qualification}</span>
+                            </div>
+                            
+                            <div className="space-y-1">
+                              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                                <Mail className="w-3 h-3" />
+                                <span>{staff.email}</span>
+                              </div>
+                              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                                <Phone className="w-3 h-3" />
+                                <span>{staff.phone}</span>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
                   </div>
                 </TabsContent>
                 
@@ -138,7 +185,7 @@ const MechanicalEngineering = () => {
             </div>
           </div>
 
-          {/* Sidebar - keeping existing structure */}
+          {/* Sidebar */}
           <div className="space-y-6">
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4">Course Reviews</h3>
