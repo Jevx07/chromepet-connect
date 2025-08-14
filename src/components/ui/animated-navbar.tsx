@@ -96,20 +96,25 @@ export function AnimatedNavBar({
                     damping: 30,
                   }}
                 >
-                  {/* Lamp/Tubelight Effect */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-t-full">
-                    {/* Outer glow */}
-                    <div className="absolute w-10 h-4 bg-primary/15 rounded-full blur-md -top-1.5 -left-2" />
-                    {/* Middle glow */}
-                    <div className="absolute w-6 h-4 bg-primary/25 rounded-full blur-sm -top-1" />
-                    {/* Inner glow */}
-                    <div className="absolute w-3 h-3 bg-primary/35 rounded-full blur-sm top-0 left-1.5" />
-                    {/* Core light */}
-                    <div className="absolute w-1 h-1 bg-primary rounded-full top-0.5 left-2.5" />
+                  {/* Enhanced Tubelight Effect */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 rounded-full shadow-lg">
+                    {/* Outer atmospheric glow */}
+                    <div className="absolute w-16 h-8 bg-primary/10 rounded-full blur-xl -top-3 -left-4 animate-pulse" />
+                    {/* Middle bright glow */}
+                    <div className="absolute w-12 h-6 bg-primary/20 rounded-full blur-lg -top-2.5 -left-2" />
+                    {/* Inner intense glow */}
+                    <div className="absolute w-8 h-4 bg-primary/30 rounded-full blur-md -top-1.5 left-0" />
+                    {/* Core tubelight */}
+                    <div className="absolute w-6 h-2 bg-primary/40 rounded-full blur-sm -top-0.5 left-1" />
+                    {/* Bright center line */}
+                    <div className="absolute w-4 h-0.5 bg-primary rounded-full top-0.25 left-2" />
+                    {/* Flickering effect */}
+                    <div className="absolute w-8 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full animate-pulse top-0 left-0" />
                   </div>
                   
-                  {/* Light beam effect */}
-                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-0.5 h-1 bg-gradient-to-b from-primary/50 to-transparent" />
+                  {/* Enhanced light beam effect */}
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-1 h-2 bg-gradient-to-b from-primary/60 via-primary/30 to-transparent blur-sm" />
+                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-0.5 h-1.5 bg-gradient-to-b from-primary/80 to-transparent" />
                 </motion.div>
               )}
             </Link>

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatedNavBar } from "@/components/ui/animated-navbar";
+import { Home, GraduationCap, BookOpen, Users, Calendar, Phone } from "lucide-react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Staff from "./pages/Staff";
@@ -25,7 +26,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AnimatedNavBar />
+        <AnimatedNavBar items={[
+          { name: "Home", url: "/", icon: Home },
+          { name: "About", url: "/about", icon: GraduationCap },
+          { name: "Departments", url: "/departments", icon: BookOpen },
+          { name: "Staff", url: "/staff", icon: Users },
+          { name: "Academics", url: "/academics", icon: Calendar },
+          { name: "Contact", url: "#contact", icon: Phone },
+        ]} />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
