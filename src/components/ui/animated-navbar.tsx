@@ -60,11 +60,15 @@ export function AnimatedNavBar({
   return (
     <div
       className={cn(
-        "fixed top-4 left-1/2 -translate-x-1/2 z-50",
+        "fixed top-4 left-1/2 -translate-x-1/2 z-[9999]",
         className,
       )}
     >
-      <div className="flex items-center gap-1 bg-background/90 border border-border/30 backdrop-blur-xl py-1 px-1 rounded-full shadow-xl">
+      <div className="flex items-center gap-1 bg-background/95 border border-border/30 backdrop-blur-xl py-1 px-1 rounded-full shadow-xl"
+           style={{ 
+             position: 'relative',
+             zIndex: 9999
+           }}>
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
