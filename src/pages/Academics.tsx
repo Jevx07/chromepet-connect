@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Navigation } from "@/components/ui/navigation";
+
 import { 
   BookOpen, 
   Calendar, 
@@ -87,7 +87,7 @@ const academicCalendar = [
 const Academics = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      
       
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Navigation } from "@/components/ui/navigation";
+
 import { Mail, Phone, Award, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { staffData } from "@/data/staffData";
@@ -59,7 +59,7 @@ const StaffCard = ({ staff }: { staff: any }) => (
 const Staff = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      
       
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">
