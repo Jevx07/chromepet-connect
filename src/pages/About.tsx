@@ -1,14 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Navigation } from "@/components/ui/navigation";
 import { GraduationCap, Target, Eye, Award, Users, Building, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-background pt-16">
       
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">

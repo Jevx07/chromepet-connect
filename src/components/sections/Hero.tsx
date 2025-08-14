@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Users, Award, BookOpen, Briefcase } from "lucide-react";
 import heroImage from "@/assets/college-hero.jpg";
+import BlurText from "@/components/ui/BlurText";
 
 const stats = [
   { icon: Users, label: "Students", value: "2,500+" },
@@ -33,14 +34,14 @@ export function Hero() {
                 Government of Tamil Nadu Institution
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Government
-                <span className="block text-secondary">Polytechnic</span>
-                <span className="block">College</span>
-                <span className="block text-3xl md:text-4xl lg:text-5xl font-normal text-white/90">
-                  Chromepet
-                </span>
-              </h1>
+              <BlurText
+                text="Government Polytechnic College Chromepet"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => console.log('Animation completed!')}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              />
               
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
                 Empowering future engineers and technologists with quality education, 
