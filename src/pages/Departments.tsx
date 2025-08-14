@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 import { ArrowRight, Cpu, Zap, Cog, Radio, Wrench, Calendar, Users, BookOpen, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BackButton } from "@/components/ui/back-button";
 
 const departments = [
   {
@@ -73,12 +74,9 @@ const Departments = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center mb-4">
-            <Button variant="ghost" asChild className="text-primary-foreground/80 hover:text-primary-foreground">
-              <Link to="/">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Link>
-            </Button>
+            <Link to="/">
+              <BackButton />
+            </Link>
           </div>
           <div className="text-center">
             <Badge variant="secondary" className="mb-4 text-sm font-medium px-4 py-2">
