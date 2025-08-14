@@ -60,14 +60,18 @@ export function AnimatedNavBar({
   return (
     <div
       className={cn(
-        "fixed top-4 left-1/2 -translate-x-1/2 z-[9999]",
+        "fixed top-4 left-1/2 -translate-x-1/2 z-[99999]",
         className,
       )}
+      style={{ 
+        position: 'fixed',
+        zIndex: 99999
+      }}
     >
       <div className="flex items-center gap-1 bg-background/95 border border-border/30 backdrop-blur-xl py-1 px-1 rounded-full shadow-xl"
            style={{ 
              position: 'relative',
-             zIndex: 9999
+             zIndex: 99999
            }}>
         {items.map((item) => {
           const Icon = item.icon;
