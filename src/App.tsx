@@ -17,6 +17,8 @@ import ComputerScience from "./pages/department-details/ComputerScience";
 import ElectricalAndElectronics from "./pages/department-details/ElectricalAndElectronics";
 import ElectronicsAndCommunication from "./pages/department-details/ElectronicsAndCommunication";
 import MechanicalEngineering from "./pages/department-details/MechanicalEngineering";
+import Contact from "./pages/Contact";
+import Placement from "./pages/Placement";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +34,8 @@ const App = () => (
           { name: "Departments", url: "/departments", icon: BookOpen },
           { name: "Staff", url: "/staff", icon: Users },
           { name: "Academics", url: "/academics", icon: Calendar },
-          { name: "Contact", url: "#contact", icon: Phone },
+          { name: "Contact", url: "/contact", icon: Phone },
+          { name: "Placement", url: "/placement", icon: GraduationCap },
         ]} />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -46,6 +49,8 @@ const App = () => (
           <Route path="/departments/electrical-electronics" element={<ElectricalAndElectronics />} />
           <Route path="/departments/electronics-communication" element={<ElectronicsAndCommunication />} />
           <Route path="/departments/mechanical-engineering" element={<MechanicalEngineering />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/placement" element={<Placement />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
