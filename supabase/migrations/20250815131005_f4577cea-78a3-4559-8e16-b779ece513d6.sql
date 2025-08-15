@@ -1,0 +1,2 @@
+-- Create edge function for sending contact emails
+-- This will be implemented as a Supabase Edge Function
