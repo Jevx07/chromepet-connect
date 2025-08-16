@@ -14,7 +14,7 @@ const navigationItems = [
     icon: GraduationCap
   },
   {
-    title: "Departments",
+    title: "Departments", 
     href: "/departments",
     icon: BookOpen
   },
@@ -29,13 +29,18 @@ const navigationItems = [
     icon: Users
   },
   {
-    title: "Academics",
-    href: "/academics",
+    title: "Gallery",
+    href: "/gallery",
+    icon: Download
+  },
+  {
+    title: "Committee",
+    href: "/committee", 
     icon: Calendar
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "/contact",
     icon: Phone
   }
 ];
