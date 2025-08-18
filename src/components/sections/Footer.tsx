@@ -128,25 +128,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <Card className="bg-gradient-hero border-0 p-8 mb-12 text-center shadow-glow">
-          <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-            Stay Updated
-          </h3>
-          <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest news, events, and important announcements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-secondary"
-            />
-            <Button className="bg-secondary hover:bg-secondary-light text-secondary-foreground px-8">
-              Subscribe
-            </Button>
-          </div>
-        </Card>
+
 
         {/* Bottom Footer */}
         <div className="pt-8 border-t border-border">

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { GraduationCap, Target, Eye, Award, Users, Building, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BackButton } from "@/components/ui/back-button";
+import { Footer } from "@/components/sections/Footer";
 
 const About = () => {
   return (
@@ -214,6 +215,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import { Phone, Mail, MapPin, Send, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Footer } from "@/components/sections/Footer";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -271,6 +272,7 @@ const Contact = () => {
           </Card>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

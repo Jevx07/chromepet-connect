@@ -8,6 +8,7 @@ import { Mail, Phone, Award, User, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BackButton } from "@/components/ui/back-button";
 import { staffData } from "@/data/staffData";
+import { Footer } from "@/components/sections/Footer";
 
 const StaffCard = ({ staff }: { staff: any }) => (
   <Card className="group hover:shadow-strong transition-all duration-300 border-0 bg-gradient-card overflow-hidden">
@@ -137,6 +138,7 @@ const Staff = () => {
           </Tabs>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

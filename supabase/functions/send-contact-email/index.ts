@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to the college's contact email
     const emailResponse = await resend.emails.send({
       from: "Government Polytechnic College Chennai <onboarding@resend.dev>",
-      to: ["tj.work.freelance@gmail.com"],
+      to: ["vegetaxrz@gmail.com"],
       subject: `New Contact Form Submission - From Contact Page`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Cpu, Zap, Cog, Radio, Wrench, Calendar, Users, BookOpen, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BackButton } from "@/components/ui/back-button";
+import { Footer } from "@/components/sections/Footer";
 
 const departments = [
   {
@@ -217,34 +218,10 @@ const Departments = () => {
             </Card>
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <Card className="inline-block bg-gradient-hero border-0 p-8 text-center shadow-glow">
-              <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-                Ready to Start Your Engineering Journey?
-              </h3>
-              <p className="text-primary-foreground/80 mb-6 max-w-2xl">
-                Explore our admission process and find the perfect program that matches your interests and career goals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-secondary hover:bg-secondary-light text-secondary-foreground"
-                >
-                  View Admission Process
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-white/10"
-                >
-                  Download Prospectus
-                </Button>
-              </div>
-            </Card>
-          </div>
+
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

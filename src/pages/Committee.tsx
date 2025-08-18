@@ -1,5 +1,6 @@
 import CommitteeCard from "@/components/ui/CommitteeCard";
 import { Users, Shield, Heart, MessageSquare, Award, Lightbulb, Crown } from "lucide-react";
+import { Footer } from "@/components/sections/Footer";
 
 const Committee = () => {
   const committees = [
@@ -102,6 +103,7 @@ const Committee = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

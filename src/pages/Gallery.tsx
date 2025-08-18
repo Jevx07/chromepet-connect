@@ -1,5 +1,6 @@
 import PixelCard from "@/components/ui/PixelCard";
 import { ImageIcon } from "lucide-react";
+import { Footer } from "@/components/sections/Footer";
 
 const Gallery = () => {
   const variants = ["default", "blue", "yellow", "pink"];
@@ -58,6 +59,7 @@ const Gallery = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
