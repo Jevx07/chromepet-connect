@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { BackButton } from "@/components/ui/back-button";
 import { Users, Target, Phone, Mail, ExternalLink, Building, Award, Handshake, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Footer } from "@/components/sections/Footer";
 
 const Placement = () => {
   const objectives = [
@@ -185,34 +186,31 @@ const Placement = () => {
             </p>
           </div>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left py-3 px-4 font-semibold">S.No</th>
-                      <th className="text-left py-3 px-4 font-semibold">Name</th>
-                      <th className="text-left py-3 px-4 font-semibold">Designation</th>
-                      <th className="text-left py-3 px-4 font-semibold">Mobile</th>
-                      <th className="text-left py-3 px-4 font-semibold">Email</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {coordinators.map((coordinator) => (
-                      <tr key={coordinator.sno} className="border-b">
-                        <td className="py-3 px-4">{coordinator.sno}</td>
-                        <td className="py-3 px-4 font-medium">{coordinator.name}</td>
-                        <td className="py-3 px-4">{coordinator.designation}</td>
-                        <td className="py-3 px-4">{coordinator.mobile}</td>
-                        <td className="py-3 px-4">{coordinator.email}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coordinators.map((coordinator) => (
+              <Card key={coordinator.sno} className="h-full hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{coordinator.name}</CardTitle>
+                  <CardDescription className="text-sm font-medium">
+                    {coordinator.designation}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center space-y-3">
+                  <div className="flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4 text-primary" />
+                    <span className="text-sm">{coordinator.mobile}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Mail className="w-4 h-4 text-primary" />
+                    <span className="text-sm break-all">{coordinator.email}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Recruiting Companies */}
@@ -279,6 +277,7 @@ const Placement = () => {
           </Card>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -2,18 +2,62 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Navigation } from "@/components/ui/navigation";
-import { Star, Wrench, ArrowLeft, Mail, Phone, Award, User } from "lucide-react";
+import { Star, Wrench, ArrowLeft, Mail, Phone, Award, User, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { staffData } from "@/data/staffData";
+import { Footer } from "@/components/sections/Footer";
 
 const BasicEngineering = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const relatedCourses = [
+    {
+      name: "Computer Science Engineering",
+      duration: ["2 Year Course", "3 Year Course"],
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      link: "/departments/computer-science"
+    },
+    {
+      name: "Electrical and Electronics Engineering",
+      duration: ["2 Year Course", "3 Year Course"],
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      link: "/departments/electrical-electronics"
+    },
+    {
+      name: "Electronics and Communication Engineering",
+      duration: ["2 Year Course", "3 Year Course"],
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      link: "/departments/electronics-communication"
+    },
+    {
+      name: "Mechanical Engineering",
+      duration: ["2 Year Course", "3 Year Course"],
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      link: "/departments/mechanical-engineering"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % relatedCourses.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + relatedCourses.length) % relatedCourses.length);
+  };
+
+  const getVisibleCourses = () => {
+    const courses = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentSlide + i) % relatedCourses.length;
+      courses.push(relatedCourses[index]);
+    }
+    return courses;
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">
@@ -188,56 +232,62 @@ const BasicEngineering = () => {
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-2xl font-bold text-foreground">Related Courses</h3>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm">←</Button>
-                    <Button variant="outline" size="sm">→</Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={prevSlide}
+                      className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={nextSlide}
+                      className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-3 gap-6">
-                  <Card className="overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200" 
-                      alt="Electrical Engineering" 
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">Electrical and Electronics Engineering</h4>
-                      <div className="flex gap-2 text-sm text-muted-foreground">
-                        <span>2 Year Course</span>
-                        <span>3 Year Course</span>
+                <div className="grid md:grid-cols-3 gap-6 transition-all duration-300 ease-in-out">
+                  {getVisibleCourses().map((course, index) => (
+                    <Card key={`${currentSlide}-${index}`} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={course.image}
+                          alt={course.name}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                       </div>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200" 
-                      alt="Mechanical Engineering" 
-                      className="w-full h-48 object-cover"
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{course.name}</h4>
+                        <div className="flex gap-2 text-sm text-muted-foreground mb-3">
+                          {course.duration.map((duration, idx) => (
+                            <span key={idx}>{duration}</span>
+                          ))}
+                        </div>
+                        <Button asChild variant="outline" size="sm" className="w-full">
+                          <Link to={course.link}>Learn More</Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                
+                {/* Carousel Indicators */}
+                <div className="flex justify-center mt-6 gap-2">
+                  {relatedCourses.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                        index === currentSlide ? 'bg-primary' : 'bg-muted-foreground/30'
+                      }`}
                     />
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">Mechanical Engineering</h4>
-                      <div className="flex gap-2 text-sm text-muted-foreground">
-                        <span>2 Year Course</span>
-                        <span>3 Year Course</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
-                  <Card className="overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200" 
-                      alt="Electronics and Communication" 
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardContent className="p-4">
-                      <h4 className="font-semibold mb-2">Electronics and Communication Engineering</h4>
-                      <div className="flex gap-2 text-sm text-muted-foreground">
-                        <span>2 Year Course</span>
-                        <span>3 Year Course</span>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  ))}
                 </div>
               </div>
             </div>
@@ -295,19 +345,20 @@ const BasicEngineering = () => {
               </div>
             </Card>
 
-            {/* Contact Form */}
+            {/* Contact Us */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Asked Any Question?</h3>
-              <div className="space-y-4">
-                <Input placeholder="Name*" />
-                <Input placeholder="Email*" />
-                <Textarea placeholder="Message*" />
-                <Button className="w-full bg-primary">SEND</Button>
-              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Have Questions?</h3>
+              <p className="text-muted-foreground mb-4">
+                Have questions about this department? Visit our contact page for assistance.
+              </p>
+              <Button asChild className="w-full bg-primary">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
             </Card>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
