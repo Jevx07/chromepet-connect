@@ -37,9 +37,22 @@ const Gallery = () => {
               <div className="relative w-full h-full overflow-hidden rounded-[25px]">
                 <img
                   src={`/images/gallery/image-${item.id}.${item.id <= 8 ? 'png' : 'jpg'}`}
-                  alt={`Gallery Image ${item.id}`}
+                  alt={`Gallery Image ${item.id} - Campus Life at GPTC Chromepet`}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
+                      <svg width="300" height="400" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#f3f4f6"/>
+                        <text x="50%" y="45%" text-anchor="middle" fill="#6b7280" font-family="Arial" font-size="14">
+                          Gallery Image ${item.id}
+                        </text>
+                        <text x="50%" y="55%" text-anchor="middle" fill="#9ca3af" font-family="Arial" font-size="12">
+                          Image Loading...
+                        </text>
+                      </svg>
+                    `)}`;
+                  }}
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <h3 className="text-white text-lg font-semibold">
