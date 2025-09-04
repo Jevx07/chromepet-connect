@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatedNavBar } from "@/components/ui/animated-navbar";
 import { Home, GraduationCap, BookOpen, Users, Calendar, Phone, Camera, UserCheck } from "lucide-react";
 import Index from "./pages/Index";
-import About from "./pages/About";
 import Staff from "./pages/Staff";
 import Departments from "./pages/Departments";
 import Admissions from "./pages/Admissions";
@@ -38,7 +37,7 @@ const App = () => (
       <BrowserRouter>
         <AnimatedNavBar items={[
           { name: "Home", url: "/", icon: Home },
-          { name: "About", url: "/about", icon: GraduationCap },
+          { name: "Admission", url: "/admission", icon: GraduationCap },
           { name: "Departments", url: "/departments", icon: BookOpen },
           { name: "Staff", url: "/staff", icon: Users },
           { name: "Gallery", url: "/gallery", icon: Camera },
@@ -48,10 +47,9 @@ const App = () => (
         ]} />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/departments" element={<Departments />} />
-          <Route path="/admissions" element={<Admissions />} />
+          <Route path="/admission" element={<Admissions />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/committee" element={<Committee />} />
           <Route path="/departments/basic-engineering" element={<BasicEngineering />} />

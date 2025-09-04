@@ -1,5 +1,4 @@
 import PixelCard from "@/components/ui/PixelCard";
-import { ImageIcon } from "lucide-react";
 import { Footer } from "@/components/sections/Footer";
 
 const Gallery = () => {
@@ -35,14 +34,18 @@ const Gallery = () => {
               variant={item.variant}
               className="hover:scale-105 transition-transform duration-300"
             >
-              <div className="flex flex-col items-center justify-center text-center p-6">
-                <ImageIcon className="w-16 h-16 text-muted-foreground mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Image placeholder - Replace with actual photo
-                </p>
+              <div className="relative w-full h-full overflow-hidden rounded-[25px]">
+                <img
+                  src={`/images/gallery/image-${item.id}.${item.id <= 8 ? 'png' : 'jpg'}`}
+                  alt={`Gallery Image ${item.id}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <h3 className="text-white text-lg font-semibold">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
             </PixelCard>
           ))}
@@ -51,10 +54,9 @@ const Gallery = () => {
         {/* Info Section */}
         <div className="mt-16 text-center">
           <div className="bg-card border border-border rounded-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Image Management</h2>
+            <h2 className="text-2xl font-bold mb-4">College Gallery</h2>
             <p className="text-muted-foreground">
-              These are placeholder cards for the gallery. Each card can be replaced with actual images 
-              by updating the image sources. The pixel animation effects will continue to work with any images added.
+              Explore our vibrant campus life through these memorable moments captured at Government Polytechnic College Chromepet.
             </p>
           </div>
         </div>

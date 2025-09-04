@@ -9,8 +9,8 @@ import { LucideIcon } from "lucide-react";
 
 const navigationItems = [
   {
-    title: "About",
-    href: "/about",
+    title: "Admission",
+    href: "/admission",
     icon: GraduationCap
   },
   {
@@ -21,11 +21,6 @@ const navigationItems = [
   {
     title: "Staff",
     href: "/staff",
-    icon: Users
-  },
-  {
-    title: "Admissions",
-    href: "/admissions",
     icon: Users
   },
   {

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Users, Award, BookOpen, Briefcase } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/college-hero.jpg";
 import BlurText from "@/components/ui/BlurText";
 
@@ -54,17 +55,12 @@ export function Hero() {
               <Button 
                 size="lg" 
                 className="bg-secondary hover:bg-secondary-light text-secondary-foreground text-lg px-8 py-4 h-auto rounded-xl shadow-glow transition-all duration-300 hover:shadow-xl"
+                asChild
               >
-                Apply for Admission
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4 h-auto rounded-xl backdrop-blur-sm transition-all duration-300"
-              >
-                Virtual Campus Tour
+                <Link to="/admission">
+                  Apply for Admission
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
             </div>
 
@@ -86,54 +82,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Quick Access Card */}
-          <div className="lg:flex justify-end hidden">
-            <Card className="w-full max-w-md bg-card/95 backdrop-blur-sm border-0 shadow-strong p-8 space-y-6">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Quick Access
-                </h3>
-                <p className="text-muted-foreground">
-                  Get started with essential resources
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-left h-auto py-4 border-primary/20 hover:border-primary hover:bg-primary/5"
-                >
-                  <BookOpen className="w-5 h-5 mr-3 text-primary" />
-                  <div>
-                    <div className="font-medium">Course Information</div>
-                    <div className="text-sm text-muted-foreground">Explore our programs</div>
-                  </div>
-                </Button>
-
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-left h-auto py-4 border-accent/20 hover:border-accent hover:bg-accent/5"
-                >
-                  <Users className="w-5 h-5 mr-3 text-accent" />
-                  <div>
-                    <div className="font-medium">Student Portal</div>
-                    <div className="text-sm text-muted-foreground">Access your account</div>
-                  </div>
-                </Button>
-
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-left h-auto py-4 border-secondary/20 hover:border-secondary hover:bg-secondary/5"
-                >
-                  <Award className="w-5 h-5 mr-3 text-secondary" />
-                  <div>
-                    <div className="font-medium">Results & Downloads</div>
-                    <div className="text-sm text-muted-foreground">Academic resources</div>
-                  </div>
-                </Button>
-              </div>
-            </Card>
-          </div>
         </div>
       </div>
 

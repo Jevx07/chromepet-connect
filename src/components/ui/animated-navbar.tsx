@@ -19,10 +19,9 @@ interface AnimatedNavBarProps {
 
 const defaultNavItems: NavItem[] = [
   { name: "Home", url: "/", icon: Home },
-  { name: "About", url: "/about", icon: GraduationCap },
+  { name: "Admission", url: "/admission", icon: GraduationCap },
   { name: "Departments", url: "/departments", icon: BookOpen },
   { name: "Staff", url: "/staff", icon: Users },
-  { name: "Academics", url: "/academics", icon: Calendar },
   { name: "Contact", url: "#contact", icon: Phone },
 ];
 
