@@ -1,13 +1,10 @@
-import PixelCard from "@/components/ui/PixelCard";
 import { Footer } from "@/components/sections/Footer";
+import { Card } from "@/components/ui/card";
 
 const Gallery = () => {
-  const variants = ["default", "blue", "yellow", "pink"];
-  
   // Create 15 gallery items
   const galleryItems = Array.from({ length: 15 }, (_, index) => ({
     id: index + 1,
-    variant: variants[index % variants.length],
     title: `Gallery Image ${index + 1}`,
   }));
 
@@ -27,14 +24,10 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {galleryItems.map((item) => (
-            <PixelCard
-              key={item.id}
-              variant={item.variant}
-              className="hover:scale-105 transition-transform duration-300"
-            >
-              <div className="relative w-full h-full overflow-hidden rounded-[25px]">
+            <Card key={item.id} className="overflow-hidden group hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-80 overflow-hidden">
                 <img
                   src={`/images/gallery/image-${item.id}.${item.id <= 8 ? 'png' : 'jpg'}`}
                   alt={`Gallery Image ${item.id} - Campus Life at GPTC Chromepet`}
@@ -54,13 +47,13 @@ const Gallery = () => {
                     `)}`;
                   }}
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <h3 className="text-white text-lg font-semibold">
                     {item.title}
                   </h3>
                 </div>
               </div>
-            </PixelCard>
+            </Card>
           ))}
         </div>
 
