@@ -23,6 +23,16 @@ const Gallery = () => {
           </p>
         </div>
 
+        {/* Info Section */}
+        <div className="mb-16 text-center">
+          <div className="bg-card border border-border rounded-lg p-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">College Gallery</h2>
+            <p className="text-muted-foreground">
+              Explore our vibrant campus life through these memorable moments captured at Government Polytechnic College Chromepet.
+            </p>
+          </div>
+        </div>
+
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {galleryItems.map((item) => (
@@ -55,16 +65,6 @@ const Gallery = () => {
               </div>
             </Card>
           ))}
-        </div>
-
-        {/* Info Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-card border border-border rounded-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">College Gallery</h2>
-            <p className="text-muted-foreground">
-              Explore our vibrant campus life through these memorable moments captured at Government Polytechnic College Chromepet.
-            </p>
-          </div>
         </div>
       </main>
       <Footer />
