@@ -147,35 +147,6 @@ const Placement = () => {
           </div>
         </div>
 
-        {/* Placement Officer */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Placement Officer</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Meet our dedicated placement officer who leads our career development initiatives.
-            </p>
-          </div>
-
-          <Card className="max-w-md mx-auto">
-            <CardHeader className="text-center">
-              <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-12 h-12 text-primary" />
-              </div>
-              <CardTitle>Tmt. Kavitha B</CardTitle>
-              <CardDescription>Lecturer/CE</CardDescription>
-            </CardHeader>
-            <CardContent className="text-center space-y-3">
-              <div className="flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm">9444190646</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm">placement.gptchr@gmail.com</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
 
         {/* Placement Coordinators */}
         <div className="mb-16">
