@@ -9,25 +9,29 @@ import {
   Facebook,
   Twitter,
   Youtube,
-  Instagram
+  Instagram,
+  ExternalLink
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { title: "About College", href: "#about" },
-  { title: "Departments", href: "#departments" },
-  { title: "Admissions", href: "#admissions" },
-  { title: "Academic Calendar", href: "#calendar" },
-  { title: "Student Portal", href: "#portal" },
-  { title: "Faculty", href: "#faculty" }
+  { title: "Home", href: "/", internal: true },
+  { title: "Departments", href: "/departments", internal: true },
+  { title: "Admissions", href: "/admission", internal: true },
+  { title: "Staff", href: "/staff", internal: true },
+  { title: "Gallery", href: "/gallery", internal: true },
+  { title: "Committee", href: "/committee", internal: true },
+  { title: "Placement", href: "/placement", internal: true },
+  { title: "Contact", href: "/contact", internal: true }
 ];
 
 const importantLinks = [
-  { title: "DOTE Tamil Nadu", href: "#" },
-  { title: "Anna University", href: "#" },
-  { title: "Government of Tamil Nadu", href: "#" },
-  { title: "AICTE", href: "#" },
-  { title: "National Academic Depository", href: "#" },
-  { title: "Grievance Portal", href: "#" }
+  { title: "DOTE Tamil Nadu", href: "https://www.dote.tn.gov.in/", internal: false },
+  { title: "Anna University", href: "https://www.annauniv.edu/", internal: false },
+  { title: "Government of Tamil Nadu", href: "https://www.tn.gov.in/", internal: false },
+  { title: "AICTE", href: "https://www.aicte-india.org/", internal: false },
+  { title: "National Academic Depository", href: "https://www.nad.gov.in/", internal: false },
+  { title: "Student Grievance Portal", href: "https://www.aicte-india.org/grievance", internal: false }
 ];
 
 export function Footer() {
@@ -99,12 +103,24 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.title}
-                  </a>
+                  {link.internal ? (
+                    <Link 
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm block"
+                    >
+                      {link.title}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-1"
+                    >
+                      {link.title}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -116,12 +132,24 @@ export function Footer() {
             <ul className="space-y-3">
               {importantLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.title}
-                  </a>
+                  {link.internal ? (
+                    <Link 
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm block"
+                    >
+                      {link.title}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-1"
+                    >
+                      {link.title}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
