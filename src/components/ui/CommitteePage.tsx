@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Download, User, ArrowLeft } from "lucide-react";
+import { Phone, Mail, Download, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/sections/Footer";
+import { BackButton } from "@/components/ui/back-button";
 
 interface Member {
   name: string;
@@ -45,10 +46,7 @@ export default function CommitteePage({
         {/* Back Button */}
         <div className="mb-8">
           <Link to="/committee">
-            <Button variant="outline" className="gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Committees
-            </Button>
+            <BackButton />
           </Link>
         </div>
 
