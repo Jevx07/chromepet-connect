@@ -108,8 +108,10 @@ const Admissions = () => {
             <Badge variant="secondary" className="mb-4 text-sm font-medium px-4 py-2">
               Admission Portal
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-              Admission <span className="text-secondary">Portal</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                Admission Portal
+              </span>
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Join Government Polytechnic College and start your journey towards a successful engineering career

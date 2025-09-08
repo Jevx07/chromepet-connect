@@ -1,5 +1,7 @@
 import { Footer } from "@/components/sections/Footer";
 import { Card } from "@/components/ui/card";
+import { BackButton } from "@/components/ui/back-button";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   // Create 15 gallery items
@@ -11,6 +13,13 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-16">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Link to="/">
+            <BackButton />
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
