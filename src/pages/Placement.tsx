@@ -22,28 +22,32 @@ const Placement = () => {
       name: "Tmt. KAVITHA B",
       designation: "Lecturer/ECE",
       mobile: "9444359441",
-      email: "sridhar.kavitha@gmail.com"
+      email: "sridhar.kavitha@gmail.com",
+      image: "/images/staff/Kavitha.B.jpg"
     },
     {
       sno: 2,
       name: "Thiru ANANAD S",
       designation: "Lecturer/MECH",
       mobile: "7010878240",
-      email: "irtanand@gmail.com"
+      email: "irtanand@gmail.com",
+      image: "/images/staff/Anand .S.jpg"
     },
     {
       sno: 3,
       name: "Tmt. RAJAKUMARI A",
       designation: "Lecturer/EEE",
       mobile: "9445204146",
-      email: "rajakumari1996@gmail.com"
+      email: "rajakumari1996@gmail.com",
+      image: "/images/staff/Rajakumari.A.jpg"
     },
     {
       sno: 4,
       name: "Tmt. JULIET THESSALONICA D",
       designation: "Lecturer/COMPUTER",
       mobile: "9444365032",
-      email: "juliet.jsamuel@gmail.com"
+      email: "juliet.jsamuel@gmail.com",
+      image: "/images/staff/Juliet Thessalonica.D.jpg"
     }
   ];
 
@@ -161,8 +165,12 @@ const Placement = () => {
             {coordinators.map((coordinator) => (
               <Card key={coordinator.sno} className="h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Users className="w-8 h-8 text-primary" />
+                  <div className="w-20 h-20 mx-auto mb-4 overflow-hidden rounded-full">
+                    <img 
+                      src={coordinator.image} 
+                      alt={coordinator.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <CardTitle className="text-lg">{coordinator.name}</CardTitle>
                   <CardDescription className="text-sm font-medium">
