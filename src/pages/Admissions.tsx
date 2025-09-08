@@ -94,7 +94,7 @@ const admissionCards = [
 
 const Admissions = () => {
   return (
-    <div className="min-h-screen bg-background pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-accent/5 to-primary/10 pt-16">
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24">
         <div className="absolute inset-0 bg-black/40"></div>
