@@ -9,6 +9,12 @@ import { Link } from "react-router-dom";
 import { staffData } from "@/data/staffData";
 import { Footer } from "@/components/sections/Footer";
 
+// Import course images
+import computerScienceImage from "@/assets/computer-science-course.jpg";
+import electricalElectronicsImage from "@/assets/electrical-electronics-course.jpg";
+import electronicsCommunicationImage from "@/assets/electronics-communication-course.jpg";
+import basicEngineeringImage from "@/assets/basic-engineering-course.jpg";
+
 const MechanicalEngineering = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -16,25 +22,25 @@ const MechanicalEngineering = () => {
     {
       name: "Computer Science Engineering",
       duration: ["2 Year Course", "3 Year Course"],
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      image: computerScienceImage,
       link: "/departments/computer-science"
     },
     {
       name: "Electrical and Electronics Engineering",
       duration: ["2 Year Course", "3 Year Course"],
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      image: electricalElectronicsImage,
       link: "/departments/electrical-electronics"
     },
     {
       name: "Electronics and Communication Engineering",
       duration: ["2 Year Course", "3 Year Course"],
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      image: electronicsCommunicationImage,
       link: "/departments/electronics-communication"
     },
     {
       name: "Basic Engineering",
       duration: ["1 Year Course"],
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=400&h=200",
+      image: basicEngineeringImage,
       link: "/departments/basic-engineering"
     }
   ];
