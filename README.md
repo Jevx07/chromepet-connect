@@ -1,3 +1,41 @@
+# 🏫 Chromepet College Information Portal
+
+A modern and responsive college website designed to provide students, staff, and visitors with clear access to academic programs, campus facilities, departments, and essential college information. Built with a clean UI using React, Tailwind CSS, and Lovable, and deployed live on Vercel.
+
+🔗 **Live Website:** https://gpt-chromepet.vercel.app/  
+🛠 **Tech Stack:** React, TypeScript, Vite, Tailwind CSS, shadcn-ui, Lovable.dev  
+🚀 **Deployment:** Vercel  
+
+---
+
+## 📌 Overview
+
+This website functions as a centralized college information portal showcasing key sections such as courses, departments, facilities, announcements, and general college details. It serves as a digital gateway for students and visitors to learn about the institution in an organized and accessible format.
+
+---
+
+## ✨ Features
+
+- Homepage with college introduction and highlights  
+- Separate sections for **departments, courses, and academic programs**  
+- Clean presentation of **laboratories, workshops, classrooms, and facilities**  
+- Responsive design supporting mobile, tablet, and desktop  
+- Simple, fast, and user-friendly navigation  
+- Deployed and maintained on Vercel for high-speed performance  
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | React, TypeScript, Vite |
+| **UI Framework** | Tailwind CSS, shadcn-ui |
+| **Platform** | Lovable.dev |
+| **Hosting** | Vercel |
+
+---
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -34,40 +72,3 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c005917c-7f45-452b-98e7-9c75e0864aa6) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
